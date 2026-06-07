@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Gửi Vợ yêu Đức!</title>
+    <style>
+        body { text-align: center; font-family: 'Arial', sans-serif; background-color: #ffeef2; padding-top: 100px; overflow: hidden; }
+        h1 { color: #d63031; font-size: 32px; }
+        .btn { padding: 15px 30px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; margin: 10px; transition: 0.2s; }
+        #yesBtn { background-color: #ff7675; color: white; }
+        #noBtn { background-color: #74b9ff; color: white; position: absolute; }
+    </style>
+</head>
+<body>
+    <img src="https://media.tenor.com/492572b9a715f2065363412354c46f22/sad-cat.gif" width="200">
+    <h1 id="title">Vợ yêu Đức ơi tha lỗi cho chồng nghenn<3</h1>
+    <button class="btn" id="yesBtn" onclick="accept()">Đồng ý</button>
+    <button class="btn" id="noBtn" onmouseover="moveButton()">Không</button>
+
+    <script>
+        // Danh sách các câu thoại mỗi khi Duy Đức di chuột vào nút "Không"
+        const messages = [
+            "Anh xin lỗi vợ yêu mà :((",
+            "Vợ đừng giận chồng nữa nha",
+            "Yêu vợ yêu nhất trên đời mà",
+            "Bấm Đồng ý đi mờ",
+            "Em thương nô lệ td này của em i mừ :<"
+        ];
+        let index = 0;
+
+        function moveButton() {
+            // Thay đổi nội dung nút "Không"
+            document.getElementById('noBtn').innerText = messages[index];
+            index = (index + 1) % messages.length;
+
+            // Nhảy nút
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 100);
+            document.getElementById('noBtn').style.left = x + 'px';
+            document.getElementById('noBtn').style.top = y + 'px';
+        }
+
+        function accept() {
+            // Khi ấn đồng ý
+            document.body.innerHTML = `
+                <h1 style="color: #6c5ce7;">Yêu vợ yêu nhất trên đời!Em Quân yêu chủ nhân Đức nhấtt❤️</h1>
+                <img src="https://media.tenor.com/N631p0N2T0UAAAAM/cute-cat.gif" width="300">
+            `;
+        }
+    </script>
+</body>
+</html>
